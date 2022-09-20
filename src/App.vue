@@ -63,6 +63,24 @@ export default {
     },
     jogar: function(letra) {
       this.letras.push(letra);
+      this.verificarErros(letra)
+    },
+    verificarErros: function(letra) {
+      if (this.palavra.toLowerCase().indexOf(letra.toLowerCase()) >= 0) {
+        return this.verificarAcertos()
+      }
+
+      this.erros++;
+
+      if(this.erros === 6) {
+        this.etapa = 'enforcado'
+      }
+    },
+    verificarAcertos: function() {
+      let letrasUnicas = [...new Set(this.palavra.split(''))]
+      if (letrasUnicas.length === (this.letras.length - this.erros)) {
+        this.etapa = 'ganhador'
+      }
     }
   }
 }
