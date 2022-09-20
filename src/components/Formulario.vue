@@ -1,11 +1,14 @@
 <template>
     <div class="formulario">
-        <div class="title">
-            Defina a palavra
+        <div class="formulario-title">
+            {{title}}
         </div>
-        <input type="text" class="formulario-input">
-        <button>
-            Próximo
+        <input type="text" class="formulario-input" v-model="inputValue">
+        <button
+        :disabled="inputValue.length == 0"
+         v-on:click="onSubmit"
+         >
+            {{button}}
         </button>
 
     </div>
@@ -14,7 +17,23 @@
 <script>
 
 export default {
-    name: 'FormularioPage'
+    name: 'FormularioPage',
+    props: {
+        title: String,
+        button: String,
+        action: Function
+    },
+    data() {
+        return {
+            inputValue: '',
+        }
+    },
+    methods: {
+        onSubmit: function() {
+            this.action(this.inputValue)
+            this.inputValue = ''
+        }
+    }
 }
 </script>
 

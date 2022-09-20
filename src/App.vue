@@ -2,7 +2,15 @@
   <h1> Hello World</h1>
 
   <section v-if="tela === 'inicio'" id="inicio">
-    <Formulario />
+    <Formulario v-if="etapa === 'palavra'"
+    title="Defina a palavra"
+    button="Próximo"
+    :action="setPalavra"
+    />
+    <Formulario v-if="etapa === 'dica'"
+    title="Defina a dica"
+    button="Iniciar jogo :)"
+    />
   </section>
 
   <section v-if="tela === 'jogo'" id="jogo">
@@ -18,11 +26,17 @@ export default {
   name: 'App',
   data() {
     return {
-      tela: 'inicio'
+      tela: 'inicio',
+      etapa: 'palavra'
     }
   },
   components: {
     Formulario
+  },
+  methods: {
+    setPalavra: function(palavra) {
+      alert(palavra)
+    }
   }
 }
 </script>

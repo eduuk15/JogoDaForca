@@ -38,3 +38,8 @@
   button:hover {
     opacity: 0.8;
   }
+
+  button:disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
