@@ -23,6 +23,7 @@
       :etapa="etapa"
       :letras="letras"
       :jogar="jogar"
+      :jogarNovamente="jogarNovamente"
     />
   </section>
 </template>
@@ -81,6 +82,14 @@ export default {
       if (letrasUnicas.length === (this.letras.length - this.erros)) {
         this.etapa = 'ganhador'
       }
+    },
+    jogarNovamente: function() {
+      this.palavra = '';
+      this.dica = '';
+      this.erros = 0;
+      this.letras = [];
+      this.tela = 'inicio';
+      this.etapa = 'palavra';
     }
   }
 }
