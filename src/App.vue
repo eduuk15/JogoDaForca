@@ -22,6 +22,7 @@
       :verificarLetra="verificarLetra"
       :etapa="etapa"
       :letras="letras"
+      :jogar="jogar"
     />
   </section>
 </template>
@@ -59,6 +60,9 @@ export default {
     },
     verificarLetra: function(letra) {
       return this.letras.find(item => item.toLowerCase() === letra.toLowerCase());
+    },
+    jogar: function(letra) {
+      this.letras.push(letra);
     }
   }
 }

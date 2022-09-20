@@ -14,7 +14,8 @@
 
         <Teclado
             :letras="letras"
-
+            :verificarLetra="verificarLetra"
+            :jogar="jogar"
         />
 
     </div>
@@ -35,6 +36,7 @@ export default {
         verificarLetra: Function,
         etapa: String,
         letras: Array,
+        jogar: Function,
     },
     data() {
     },
