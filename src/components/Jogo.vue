@@ -34,7 +34,7 @@
 import Forca from './Forca.vue'
 import Palavra from './Palavra.vue'
 import Teclado from './Teclado.vue'
-import Final from './Final.vue'
+import Final from './Final'
 
 export default {
     name: 'JogoPage',

@@ -1,5 +1,6 @@
+
 <template>
-  <h1> Hello World</h1>
+  <h1> Jogo da Forca <i class="fa-solid fa-scythe"></i> </h1>
 
   <section v-if="tela === 'inicio'" id="inicio">
     <Formulario v-if="etapa === 'palavra'"
